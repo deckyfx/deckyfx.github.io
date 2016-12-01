@@ -1,0 +1,17 @@
+ember new emberjs
+cd emberjs
+ember generate template application
+ember generate route index
+
+# ember install ember-cli-coffeescript --save
+
+ember install firebase/emberfire#master torii ember-cli-content-security-policy ember-bootstrap  ember-cli-sass ember-cli-bootstrap-sassy ember-cli-deprecation-workflow --save
+npm install broccoli-ember-script broccoli-funnel --save
+
+
+> Hack emberfire to supress Deprecated warning
+	see https://github.com/dunnkers/emberfire/commit/73c501e094fdc763aabc4d8988326adac71433a1
+	or install master branch > ember install firebase/emberfire#master --save
+
+> deprecation-workflow
+	see https://github.com/mixonic/ember-cli-deprecation-workflow/
