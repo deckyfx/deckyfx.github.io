@@ -1,5 +1,15 @@
-ember new emberjs
-cd emberjs
+create new repository deckyfx.github.io (without any files, readme.md license, nor .gitignore)
+
+ember new deckyfx-github-io
+
+cd deckyfx-github-io
+
+git init
+
+git remote add origin https://github.com/deckyfx/deckyfx.github.io
+
+git push -u origin master
+
 ember generate template application
 ember generate route index
 
@@ -8,6 +18,9 @@ ember generate route index
 ember install firebase/emberfire#master torii ember-cli-content-security-policy ember-bootstrap  ember-cli-sass ember-cli-bootstrap-sassy ember-cli-deprecation-workflow --save
 npm install broccoli-ember-script broccoli-funnel --save
 
+ember install ember-cli-github-pages --save
+
+bower install firebase font-awesome bootstrap-social --save
 
 > Hack emberfire to supress Deprecated warning
 	see https://github.com/dunnkers/emberfire/commit/73c501e094fdc763aabc4d8988326adac71433a1
