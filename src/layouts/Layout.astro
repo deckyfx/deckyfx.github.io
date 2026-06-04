@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+import { Github, House, BookOpen, User, FolderGit2 } from 'lucide-astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Personal site of Decky FX — developer, builder, tinkerer.' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home', icon: House },
+  { href: '/about', label: 'About', icon: User },
+  { href: '/portfolio', label: 'Portfolio', icon: FolderGit2 },
+  { href: '/blog', label: 'Blog', icon: BookOpen },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans antialiased">
+    <header class="border-b border-zinc-800">
+      <nav class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-lg font-semibold tracking-tight hover:text-white transition-colors">
+          decky.win
+        </a>
+        <div class="flex gap-1 text-sm text-zinc-400">
+          {navLinks.map(({ href, label, icon: Icon }) => (
+            <a
+              href={href}
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors"
+            >
+              <Icon size={14} />
+              {label}
+            </a>
+          ))}
+          <a
+            href="https://github.com/deckyfx"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-zinc-800 hover:text-white transition-colors"
+          >
+            <Github size={14} />
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <slot />
+    </main>
+
+    <footer class="border-t border-zinc-800 mt-24">
+      <div class="max-w-3xl mx-auto px-6 py-6 text-sm text-zinc-500 text-center">
+        © {new Date().getFullYear()} Decky FX
+      </div>
+    </footer>
+  </body>
+</html>

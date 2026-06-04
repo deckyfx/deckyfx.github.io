@@ -1,55 +1,43 @@
-# deckyfx.github.io
+# Astro Starter Kit: Minimal
 
-[Page](https://deckyfx.github.io)
+```sh
+bun create astro@latest -- --template minimal
+```
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Prerequisites
+## 🚀 Project Structure
 
-You will need the following things properly installed on your computer.
+Inside of your Astro project, you'll see the following folders and files:
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-## Installation
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-* `git clone <repository-url>` this repository
-* `cd deckyfx-github-io`
-* `npm install`
-* `bower install`
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## Running / Development
+Any static assets, like images, can be placed in the `public/` directory.
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+## 🧞 Commands
 
-### Code Generators
+All commands are run from the root of the project, from a terminal:
 
-Make use of the many generators for code, try `ember help generate` for more details
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `bun install`             | Installs dependencies                            |
+| `bun dev`             | Starts local dev server at `localhost:4321`      |
+| `bun build`           | Build your production site to `./dist/`          |
+| `bun preview`         | Preview your build locally, before deploying     |
+| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `bun astro -- --help` | Get help using the Astro CLI                     |
 
-### Running Tests
+## 👀 Want to learn more?
 
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

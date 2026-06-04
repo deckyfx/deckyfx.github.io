@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    name: 'react-native-printer',
+    url: 'https://github.com/deckyfx/react-native-printer',
+    desc: 'React Native ESC/POS printer module',
+    stars: '⭐⭐⭐',
+  },
+  {
+    name: 'dioxus-ipc-bridge',
+    url: 'https://github.com/deckyfx/dioxus-ipc-bridge',
+    desc: 'Rust lib for HTTP-like IPC bridge in Dioxus',
+    stars: '⭐⭐',
+  },
+  {
+    name: 'dioxus-react-integration',
+    url: 'https://github.com/deckyfx/dioxus-react-integration',
+    desc: 'Develop Dioxus apps using React JS',
+    stars: '⭐⭐',
+  },
+  {
+    name: 'ragnarok-online',
+    url: 'https://github.com/deckyfx/ragnarok-online',
+    desc: 'Dockerized Ragnarok Online private server stack',
+    stars: '⭐⭐',
+  },
+  {
+    name: 'manga-reader',
+    url: 'https://github.com/deckyfx/manga-reader',
+    desc: 'Manga Reader with OCR + Translation',
+    stars: '⭐',
+  },
+  {
+    name: 'insomnia-client',
+    url: 'https://github.com/deckyfx/insomnia-client',
+    desc: 'CLI HTTP client compatible with Insomnia YAML',
+    stars: '',
+  },
+  {
+    name: 'anpan-os',
+    url: 'https://github.com/deckyfx/anpan-os',
+    desc: 'CasaOS alternative powered by Bun',
+    stars: '',
+  },
+  {
+    name: 'agenthub',
+    url: 'https://github.com/deckyfx/agenthub',
+    desc: 'AI agent fleet dashboard',
+    stars: '',
+  },
+];
+---
+
+<Layout title="Decky FX — Developer">
+  <!-- Bio -->
+  <section class="mb-16">
+    <h1 class="text-3xl font-bold mb-3 tracking-tight">Hey, I'm Decky 👋</h1>
+    <p class="text-zinc-400 text-lg leading-relaxed max-w-xl">
+      Full-stack developer and builder. I work across the stack — TypeScript, Rust, mobile, and
+      infrastructure. I build tools that scratch my own itch and occasionally ship them to GitHub.
+    </p>
+    <div class="flex gap-4 mt-6 text-sm">
+      <a
+        href="https://github.com/deckyfx"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition-colors text-zinc-200"
+      >
+        GitHub
+      </a>
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors text-zinc-300"
+      >
+        Read the blog →
+      </a>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-6">Projects</h2>
+    <div class="grid gap-3">
+      {projects.map((p) => (
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener"
+          class="group flex items-start justify-between p-4 rounded-xl border border-zinc-800 hover:border-zinc-600 bg-zinc-900/50 hover:bg-zinc-900 transition-all"
+        >
+          <div>
+            <div class="font-mono text-sm font-medium text-zinc-200 group-hover:text-white transition-colors">
+              {p.name}
+            </div>
+            <div class="text-sm text-zinc-500 mt-0.5">{p.desc}</div>
+          </div>
+          {p.stars && <span class="text-sm shrink-0 ml-4 mt-0.5">{p.stars}</span>}
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
